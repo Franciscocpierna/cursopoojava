@@ -68,21 +68,21 @@ public class Lutador {
 		}
 		
 		public void setVitorias(int vitorias) {
-			this.vitorias = vitorias;
+			this.vitorias = this.getVitorias()+1;
 		}
 		public int getVitorias() {
 			return vitorias;
 		}
 		
 		public void setDerrotas(int derrotas) {
-			this.derrotas = derrotas;
+			this.derrotas = this.getDerrotas()+1;;
 		}
 		public int getDerrotas() {
 			return derrotas;
 		}
 		
 		public void setEmpates(int empates) {
-			 this.empates=empates;
+			 this.empates=this.getEmpates()+1;
 		}
 		public int getEmpates() {
 			return empates;
