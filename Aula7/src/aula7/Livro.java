@@ -1,15 +1,26 @@
 package aula7;
 
 public class Livro implements Publicacao {
-	private String titulo, autor,leitor; 
+	private String titulo, autor; 
 	private int totPaginas,pagAtual;
 	private boolean aberto; 
+	private Pessoa leitor;
+	
+	public Livro(String Titulo, String autor, int totPaginas, Pessoa leitor) {
+	   this.setTitulo(Titulo);
+	   this.setAutor(autor);
+	   this.setTotpaginas(totPaginas);
+	   this.setLeitor(leitor);
+	   this.setAberto(false);
+	   this.setPagatual(0);
+	}
 
 	
-	public void detalhes() {
-		
+	public String detalhes() {
+		return "Livro{"+"titulo=" + titulo +"\n, autor= "+autor
+				+ "\n, totPaginas= "+ totPaginas+ "\n, pagAtual="+pagAtual+","
+				+ "\n, aberto="+aberto+"\n, leitor="+ leitor.getNome()+'}';
 	}
-	
 	private void setTitulo(String titulo) {
 		 this.titulo =titulo;
 		}
@@ -25,7 +36,7 @@ public class Livro implements Publicacao {
 	private String getLeitor() {
 	    	return this.getLeitor();
 	    }
-	private void setLeitor(String leitor) {
+	private void setLeitor(Pessoa leitor) {
 	    	this.leitor=leitor;
 	    	
 	    }
@@ -54,31 +65,31 @@ public class Livro implements Publicacao {
 	@Override
 	public void abrir() {
 		// TODO Auto-generated method stub
-	    	
+	    this.setAberto(true);
 	}
 
 	@Override
 	public void fechar() {
 		// TODO Auto-generated method stub
-		
+		this.setAberto(false);
 	}
 
 	@Override
-	public void folear() {
+	public void folear(int p) {
 		// TODO Auto-generated method stub
-		
+		this.setPagatual(p);
 	}
 
 	@Override
 	public void avancarPag() {
 		// TODO Auto-generated method stub
-		
+		this.setPagatual(this.getPagatual()+1);
 	}
 
 	@Override
 	public void voltarPag() {
 		// TODO Auto-generated method stub
-		
+		this.setPagatual(this.getPagatual()-1);
 	}
 	
 }
