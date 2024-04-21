@@ -1,7 +1,8 @@
 package aula7;
 
 public class Livro implements Publicacao {
-	private String titulo, autor; 
+	private String titulo;
+	private String autor; 
 	private int totPaginas,pagAtual;
 	private boolean aberto; 
 	private Pessoa leitor;
@@ -17,48 +18,50 @@ public class Livro implements Publicacao {
 
 	
 	public String detalhes() {
-		return "Livro{"+"titulo=" + titulo +"\n, autor= "+autor
-				+ "\n, totPaginas= "+ totPaginas+ "\n, pagAtual="+pagAtual+","
-				+ "\n, aberto="+aberto+"\n, leitor="+ leitor.getNome()+'}';
+		return "Livro{"+"titulo=" + this.getTitulo() +", autor= "+this.getAutor()
+				+ "\n, totPaginas= "+ this.getTotpaginas()+ ", pagAtual="+this.getPagatual()+","
+				+ "\n, aberto="+aberto+"\n, Nome="+ leitor.getNome()+
+				", Idade="+ leitor.getIdade()+
+				", sexo="+ leitor.getSexo()+'}';
 	}
-	private void setTitulo(String titulo) {
-		 this.titulo =titulo;
+	public void setTitulo(String titulo) {
+		    this.titulo =titulo;
 		}
-	private String getTitulo() {
-			return this.getTitulo();
+	public String getTitulo() {
+			return this.titulo;
 		}
-	private int getAutor() {
-			return getAutor();
+	public String getAutor() {
+			return this.autor;
 		}
 	private void setAutor(String autor) {
 	    	this.autor= autor;
 	    }
-	private String getLeitor() {
-	    	return this.getLeitor();
+	public Pessoa getLeitor() {
+	    	return this.leitor;
 	    }
-	private void setLeitor(Pessoa leitor) {
+	public void setLeitor(Pessoa leitor) {
 	    	this.leitor=leitor;
 	    	
 	    }
-	private void setTotpaginas(int totPaginas) {
+	public void setTotpaginas(int totPaginas) {
     	this.totPaginas= totPaginas;
     }
-	private int getTotpaginas() {
-       return this.getTotpaginas();
+	public int getTotpaginas() {
+       return this.totPaginas;
     }
 	private int getPagatual() {
-	       return this.getPagatual();
+	       return this.pagAtual;
 	    }
 	
 	private void setPagatual(int pagAtual) {
     	this.pagAtual= pagAtual;
     }
 
-	private boolean getAberto() {
-	       return this.getAberto();
+	public boolean getAberto() {
+	       return this.aberto;
 	    }
 
-	private void setAberto(boolean aberto) {
+	public void setAberto(boolean aberto) {
     	this.aberto= aberto;
     }
 
@@ -77,7 +80,12 @@ public class Livro implements Publicacao {
 	@Override
 	public void folear(int p) {
 		// TODO Auto-generated method stub
-		this.setPagatual(p);
+		if(p >this.totPaginas) {
+			this.setPagatual(0);
+		}else {
+			this.setPagatual(p);	
+		}
+		
 	}
 
 	@Override
