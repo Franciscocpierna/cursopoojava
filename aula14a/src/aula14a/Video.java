@@ -45,13 +45,15 @@ public class Video implements AcoesVideo{
 			return this.avaliacao;
 		}
 	public void setAvaliacao(int avaliacao) {
-	   	this.avaliacao= avaliacao;
+	    int nova;
+	    nova = (this.getAvaliacao()+ avaliacao)/this.getViwes();
+		this.avaliacao= nova;
 	    }
 	public int getViwes() {
 	    	return this.views;
 	    }
 	public void setViews(int viwes) {
-	    	this.views=views;
+	    	this.views=views+1;
 	    	
 	    }
 	public int getCurtidas() {
