@@ -41,7 +41,7 @@ public abstract class Pessoa {
    
 
    
-    public String detalhes() {
+    public String toString() {
 		return "Pessoa{"+"Nome=" + this.getNome() +", Idade="+ this.getIdade()+
 				", sexo= "+ this.getSexo()+" Experiencia"+this.getExperiencia()+'}';
 	}

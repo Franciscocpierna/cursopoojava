@@ -25,7 +25,7 @@ public class Gafanhoto extends Pessoa {
 		 	
 	 }
 	 @Override
-	 public String detalhes() {
-			return "Gafanhoto{"+ super.detalhes() +"\n Login "+this.getLogin()+", Assistindo "+this.getTotAssistindo()+'}';
+	 public String toString() {
+			return "Gafanhoto{"+ super.toString()+"\n Login "+this.getLogin()+", Assistindo "+this.getTotAssistindo()+'}';
 		}
 }

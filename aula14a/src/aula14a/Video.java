@@ -71,8 +71,8 @@ public class Video implements AcoesVideo{
 	    	
 	    }
 	  
-	@Override 
-	public String  detalhes() {
+	@Override
+	 public String toString() {
 			return "Titulo{"+"titulo=" + this.getTitulo() +", Avaliação = "+this.getAvaliacao()+
 					
 			" Views "+this.getViwes()+" Curtidas "+this.getCurtidas()+" reproduzindo "+this.getReproduzindo()+'}';

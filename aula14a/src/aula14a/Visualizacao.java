@@ -51,7 +51,7 @@ public class Visualizacao {
   }
   
   
-  public String detalhes() {
+  public String toString() {
 		return "Visualizaçao{" +"Espectador "+this.espectador.nome+" Filme "+this.filme.getTitulo()+
 				" Assistindo "+this.espectador.getTotAssistindo()+" Views"+this.filme.getViwes()+
 				" Avaliação "+this.filme.getAvaliacao() +'}';
