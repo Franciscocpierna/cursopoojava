@@ -1,11 +1,5 @@
 package bancodedados;
-import java.sql.*;
-/*import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-*/
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -14,45 +8,34 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
-public class BancodeDados extends JFrame {
+
+public class Inclusão extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JPasswordField txtpass;
-	
 
 	/**
 	 * Launch the application.
-	 * @throws SQLException 
 	 */
-	public static void main(String[] args) throws SQLException {
-		try {
-		Connection connection = null;
-		connection = DriverManager.getConnection("jdbc:sqlite:base.db");
-		
-		} catch(SQLException e) {
-			  // Se a mensagem de erro for: "out of memory",
-			  // Provavelmente erro ao criar(permissão) ou caminho do banco de dados
-			  System.err.println(e.getMessage());
-			}
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BancodeDados frame = new BancodeDados();
+					Inclusão frame = new Inclusão();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-	
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public BancodeDados() {
+	public Inclusão() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -61,25 +44,25 @@ public class BancodeDados extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblInclusão = new JLabel("INCLUSÃO");
+		lblInclusão.setBounds(191, 10, 51, 14);
+		contentPane.add(lblInclusão);
+		
 		JLabel lblNewLabel = new JLabel("Nome ");
-		lblNewLabel.setBounds(10, 52, 60, 14);
+		lblNewLabel.setBounds(20, 50, 60, 14);
 		contentPane.add(lblNewLabel);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(50, 49, 86, 20);
-		contentPane.add(txtNome);
 		txtNome.setColumns(10);
-		
-		JLabel lblNewLabel_1 = new JLabel("LOGIN");
-		lblNewLabel_1.setBounds(171, 11, 46, 14);
-		contentPane.add(lblNewLabel_1);
+		txtNome.setBounds(60, 47, 86, 20);
+		contentPane.add(txtNome);
 		
 		JLabel lSenha = new JLabel("Senha");
-		lSenha.setBounds(10, 91, 46, 14);
+		lSenha.setBounds(20, 89, 46, 14);
 		contentPane.add(lSenha);
 		
 		txtpass = new JPasswordField();
-		txtpass.setBounds(50, 88, 86, 20);
+		txtpass.setBounds(60, 86, 86, 20);
 		contentPane.add(txtpass);
 	}
 }
